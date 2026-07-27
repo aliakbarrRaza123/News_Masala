@@ -1,0 +1,37 @@
+<------------------------ Component LifeCycle  ----------------------->
+1- Mount (birth of your Component)
+2- Update (growth of your Component)
+3- Unmount (death of your Component)
+
+
+<------------------------ Methods in React Component LifeCycle  ----------------------->
+1- ComponentDidMount()    {DOM render hone ke baad ye chalega}
+2- ComponentDidUpdate()   {updating the DOM in response to new props,state changes or force update}
+3- ComponentWillUnmount() {usually used to perform cleanups}
+4- render()               {it runs during mounting and updating of your component}
+4- render()               {it should be pure you can't change the state inside it}
+
+
+
+<------------------------ Diagram for Component LifeCycle  ----------------------->
+Mounting :-
+1- constructor()
+2- render()
+3- ComponentDidMount()
+
+Updating :-
+1- render()
+2- ComponentDidUpdate()
+
+Unmounting :-
+1- ComponentWillUnmount()
+
+
+
+// agar key use na krte to ese fetch krskte thy news props change hone ke baad (like category) 
+componentDidUpdate(prevProps) 
+{
+  if (prevProps.category !== this.props.category) {
+    this.updateNews();
+  }
+}

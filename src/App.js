@@ -15,32 +15,32 @@ export default class App extends Component {
           <Route
             path="/"
             // using key makes them different instances of News component
-            element={<News key="general" pageSize={5} country="us" category="general" color="dark"/>}
+            element={<News key="general" pageSize={8} country="us" category="general" color="dark"/>}
           />
           <Route
             path="/business"
-            element={<News key="business" pageSize={5} country="us" category="business" color="info"/>}
+            element={<News key="business" pageSize={8} country="us" category="business" color="info"/>}
           />
           <Route
             path="/entertainment"
-            element={<News key="entertainment" pageSize={5} country="us" category="entertainment" 
+            element={<News key="entertainment" pageSize={8} country="us" category="entertainment" 
             color="warning"/>}
           />
           <Route
             path="/health"
-            element={<News key="health" pageSize={5} country="us" category="health" color="primary"/>}
+            element={<News key="health" pageSize={8} country="us" category="health" color="primary"/>}
           />
           <Route
             path="/science"
-            element={<News key="science" pageSize={5} country="us" category="science" color="secondary"/>}
+            element={<News key="science" pageSize={8} country="us" category="science" color="secondary"/>}
           />
           <Route
             path="/sports"
-            element={<News key="sports" pageSize={5} country="us" category="sports"color="danger"/>}
+            element={<News key="sports" pageSize={8} country="us" category="sports"color="danger"/>}
           />
           <Route
             path="/technology"
-            element={<News key="technology" pageSize={5} country="us" category="technology" color="success"/>}
+            element={<News key="technology" pageSize={8} country="us" category="technology" color="success"/>}
           />
         </Routes>
       </HashRouter>

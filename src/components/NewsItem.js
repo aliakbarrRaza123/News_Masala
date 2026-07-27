@@ -12,6 +12,7 @@ export default class NewsItem extends Component
           src={imgUrl || "https://placehold.co/600x400?text=No+Image"}
           className="card-img-top"
           alt="News"
+          style={{ height: "200px", objectFit: "cover" }}
           // used if there is any error in the imgUrl
           onError={(e) => {
             e.target.onerror = null; // infinite loop se bachata hai
@@ -20,10 +21,10 @@ export default class NewsItem extends Component
           <div className="card-body">
             <span className={`position-absolute top-0 translate-middle badge rounded-pill bg-${color}`} style={{left: '90%',zIndex: '1'}}> {source}
             </span>
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{description}...</p>
+            <h5 className="card-title">{title.slice(0,99)}</h5>
+            <p className="card-text">{description.slice(0,152)}</p>
             <p className="card-text"> <small className="text-muted">
-              By {!author ? "Unknown" : author} on {new Date(publishedAt).toLocaleString("en-US", {
+              By {!author ? "Unknown" : author} on {publishedAt && new Date(publishedAt).toLocaleString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
