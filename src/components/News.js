@@ -11,7 +11,8 @@ export default class News extends Component {
     pageSize : 5,
     country : 'us',
     category : 'general',
-    color : 'primary'
+    color : 'primary',
+    setProgress: () => {}
   }
 
   static propTypes = {
@@ -19,6 +20,7 @@ export default class News extends Component {
     country : PropTypes.string,
     category : PropTypes.string,
     color : PropTypes.string,
+    setProgress : PropTypes.func,
   }
 
   capitalize = (str) =>
@@ -39,10 +41,13 @@ export default class News extends Component {
   // using function to avoid repititive tasks
   updateNews = async() =>
   {
+    this.props.setProgress(10);
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=fd6b8c2e4eb34b8497ab9a2373c4517a&page=${this.state.pageNumber}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     // console.log(parsedData);
     // set state render() hone ke baad chalega 
     this.setState({
@@ -50,6 +55,7 @@ export default class News extends Component {
       totalResults : parsedData.totalResults,
       loading : false
     })
+    this.props.setProgress(100);
   }
   fetchMoreData = async () => 
   {

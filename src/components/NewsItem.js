@@ -7,7 +7,10 @@ export default class NewsItem extends Component
     let {title,description,imgUrl,newsUrl,author,publishedAt,source,color} = this.props;
     return (
       <div className="my-3">
-        <div className="card">
+        <div className="card position-relative">
+          {/* badge ko upar show karo image se bcz it is position absolute */}
+          <span className={`position-absolute top-0 end-0 translate-end badge rounded-pill bg-${color}`} style={{zIndex: '1'}}> {source}
+          </span>
           <img
           src={imgUrl || "https://placehold.co/600x400?text=No+Image"}
           className="card-img-top"
@@ -18,9 +21,7 @@ export default class NewsItem extends Component
             e.target.onerror = null; // infinite loop se bachata hai
             e.target.src = "https://placehold.co/600x400?text=No+Image";
           }}/>
-          <div className="card-body">
-            <span className={`position-absolute top-0 translate-middle badge rounded-pill bg-${color}`} style={{left: '90%',zIndex: '1'}}> {source}
-            </span>
+          <div className="card-body" >
             <h5 className="card-title">{title.slice(0,99)}</h5>
             <p className="card-text">{description.slice(0,152)}</p>
             <p className="card-text"> <small className="text-muted">
