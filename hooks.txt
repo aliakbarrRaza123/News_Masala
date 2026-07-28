@@ -1,0 +1,12 @@
+<-------------------------- Introduction to Hooks -------------------------->
+1- hooks are introduced to use features of class based components in function based components.
+2- like lifecycle methods(useState,useEffects,useRef) and states.
+3- Hooks can only be used inside the functional component not inside loops or conditions.
+
+
+<-------------------------- Commomly used React Hooks -------------------------->
+1- useState   (It is used to change the state of variables)
+2- useEffect  (if we want to do something after the updation of a state like in ComponentDidMount)
+3- useContext (Yani agar ek value ko parent se bahut deep child components tak bhejna ho to har
+-              component me props pass karne ki zarurat nahi padti,so no prop drilling)
+4- useRef     (useRef ki value change karne se component re-render nahi hota unlike useState)
