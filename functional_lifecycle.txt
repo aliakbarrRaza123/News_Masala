@@ -1,3 +1,17 @@
+<------------------------ Diagram for Functional LifeCycle  ----------------------->
+Mounting :-
+1- return jsx
+2- browser renders (props or state changes)
+3- useEffect(() => { ... }, [])
+
+Updating :-
+1- render()
+2- useEffect(() => { ... }, [dependency])         // useEffect with dependency array
+
+Unmounting :-
+1- useEffect(() => { return () => { ... } }, [])  // provides cleanup function
+
+
 <-------------------------- Introduction to Hooks -------------------------->
 1- hooks are introduced to use features of class based components in function based components.
 2- like lifecycle methods(useState,useEffects,useRef) and states.
