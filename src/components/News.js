@@ -40,15 +40,15 @@ const News = ({
   useEffect(() => {
     document.title = `${capitalize(category)} - NewsMonkey`;
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
   const fetchMoreData = async () => {
-    let nextPage = pageNumber + 1;
-    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=fd6b8c2e4eb34b8497ab9a2373c4517a&page=${nextPage}&pageSize=${pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=fd6b8c2e4eb34b8497ab9a2373c4517a&page=${pageNumber+1}&pageSize=${pageSize}`;
+    setPageNumber(pageNumber+1);
     const data = await fetch(url);
     const parsedData = await data.json();
     // console.log(parsedData);
-    setPageNumber(nextPage);
     // append krenge fetchMoreData me
     setArticles((prevArticles) => {
       return prevArticles.concat(parsedData.articles)
@@ -58,7 +58,7 @@ const News = ({
   
   return (
     <>
-      <h2 className="text-center" style={{ margin: "20px" }}>
+      <h2 className="text-center" style={{ margin: "80px 20px 0px" , marginTop : '80px'}}>
         NewsMasala - Top {capitalize(category)} Headlines
       </h2>
       

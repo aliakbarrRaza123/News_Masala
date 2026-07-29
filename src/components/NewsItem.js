@@ -27,8 +27,8 @@ const NewsItem = (props) => {
           }}
         />
         <div className="card-body">
-          <h5 className="card-title">{title.slice(0, 99)}</h5>
-          <p className="card-text">{description.slice(0, 152)}</p>
+          <h5 className="card-title">{title ? title.slice(0, 99) : "No Title"}</h5>
+          <p className="card-text">{description ? description.slice(0, 99) : "No Description"}</p>
           <p className="card-text">
             {" "}
             <small className="text-muted">
