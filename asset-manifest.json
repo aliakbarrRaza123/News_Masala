@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/News_Masala/static/css/main.dc4d6ff2.css",
+    "main.js": "/News_Masala/static/js/main.362a247c.js",
+    "static/js/453.49c13d3b.chunk.js": "/News_Masala/static/js/453.49c13d3b.chunk.js",
+    "static/media/loading.gif": "/News_Masala/static/media/loading.4cfb09a4fac6b51e8417.gif",
+    "index.html": "/News_Masala/index.html",
+    "main.dc4d6ff2.css.map": "/News_Masala/static/css/main.dc4d6ff2.css.map",
+    "main.362a247c.js.map": "/News_Masala/static/js/main.362a247c.js.map",
+    "453.49c13d3b.chunk.js.map": "/News_Masala/static/js/453.49c13d3b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.362a247c.js"
+  ]
+}
