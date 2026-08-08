@@ -4,6 +4,7 @@ import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
 
+const apiKey = process.env.REACT_APP_API_KEY;
 // function based component
 const News = ({
   pageSize,
@@ -13,7 +14,6 @@ const News = ({
   setProgress,
 }) =>
 {
-  // console.log("Hi I am a constructor from News component");
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totalResults, setTotalResults] = useState(0);
@@ -24,7 +24,7 @@ const News = ({
 
   const updateNews = async () => {
     setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=fd6b8c2e4eb34b8497ab9a2373c4517a&page=${pageNumber}&pageSize=${pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${pageNumber}&pageSize=${pageSize}`;
     setLoading(true);
     const data = await fetch(url);
     setProgress(30);
@@ -44,7 +44,7 @@ const News = ({
   }, []);
 
   const fetchMoreData = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=fd6b8c2e4eb34b8497ab9a2373c4517a&page=${pageNumber+1}&pageSize=${pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${pageNumber+1}&pageSize=${pageSize}`;
     setPageNumber(pageNumber+1);
     const data = await fetch(url);
     const parsedData = await data.json();

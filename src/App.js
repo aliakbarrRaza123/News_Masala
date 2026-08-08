@@ -2,15 +2,15 @@ import './App.css';
 import React , {useState} from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
-import { progress } from 'framer-motion';
+
 
 const App = () => 
 {
   const [progress,setProgress] = useState(0);
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Navbar />
       <LoadingBar
       height={3}
@@ -49,8 +49,9 @@ const App = () =>
           element={<News setProgress={setProgress} key="technology" pageSize={8} country="us" category="technology" color="success"/>}
         />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
+
 
 export default App;
