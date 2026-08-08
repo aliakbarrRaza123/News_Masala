@@ -18,7 +18,6 @@ The application fetches news from a news API and presents it through a clean, re
 * 🔄 Infinite Scroll for loading more articles
 * ⏳ Loading indicator while fetching news
 * 📊 Top Loading Bar for better user experience
-* 🌙 Dark Mode
 * 📱 Responsive design
 * 📖 Read More option for complete articles
 * 🔗 Open full articles through the original news source
